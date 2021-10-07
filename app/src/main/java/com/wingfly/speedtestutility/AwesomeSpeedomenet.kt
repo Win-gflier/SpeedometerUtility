@@ -120,6 +120,7 @@ open class AwesomeSpeedometer @JvmOverloads constructor(
     }
 
     private fun init() {
+        unit="Mbps"
         textPaint.textAlign = Paint.Align.CENTER
         speedometerPaint.style = Paint.Style.STROKE
         speedometerPaint.strokeCap = Paint.Cap.ROUND
