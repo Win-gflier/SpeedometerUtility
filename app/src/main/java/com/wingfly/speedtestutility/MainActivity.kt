@@ -103,6 +103,7 @@ class MainActivity : AppCompatActivity() {
 
         progressBar?.visibility=View.VISIBLE
         txtConnect?.text= "Подключение"
+        txtConnect?.textSize= 20f
 
 
         Thread {
