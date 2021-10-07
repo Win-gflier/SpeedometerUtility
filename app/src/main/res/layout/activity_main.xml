@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,45 +7,8 @@
     android:background="#1D2039"
     tools:context=".MainActivity">
 
-    <!--step 1-->
-    <!--
-    <ImageView
-        android:id="@+id/main_background"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/start_speed_test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-
-        android:visibility="gone"
-        android:id="@+id/main_background2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/start_speed_test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Начать"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/main_background"
-        app:layout_constraintEnd_toEndOf="@+id/main_background"
-        app:layout_constraintStart_toStartOf="@+id/main_background"
-        app:layout_constraintTop_toTopOf="@+id/main_background" />-->
-
-
-    <com.github.anastr.speedviewlib.PointerSpeedometer
+    <com.wingfly.speedtestutility.AwesomeSpeedometer
         android:id="@+id/speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,14 +17,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:sv_backgroundCircleColor="#1D2039"
-        app:sv_centerCircleColor="#1D2039"
-        app:sv_indicator="NeedleIndicator"
-        app:sv_markColor="#1D2039"
-        app:sv_maxSpeed="100"
-        app:sv_pointerColor="@color/teal_200"
-        app:sv_speedometerColor="@color/teal_200"
-        app:sv_textColor="@color/white"
-        app:sv_tickNumber="10"
-        app:sv_tickPadding="20dp"
-        app:sv_tickRotation="false" />
+        app:sv_centerCircleColor="#2d3153"
+        app:sv_indicatorColor="#ed4366"
+        app:sv_indicatorWidth="5dp"
+        app:sv_markColor="#313553"
+        app:sv_markHeight="1dp"
+        app:sv_markStyle="ROUND"
+        app:sv_markWidth="0.5dp"
+        app:sv_marksNumber="80"
+        app:sv_marksPadding="55dp"
+        app:sv_maxSpeed="150"
+        app:sv_pointerColor="#ed4366"
+        app:sv_speedTextPosition="CENTER"
+        app:sv_speedometerColor="#ed4366"
+        app:sv_tickNumber="7"
+        app:sv_tickPadding="-16dp"
+        app:sv_tickRotation="true" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

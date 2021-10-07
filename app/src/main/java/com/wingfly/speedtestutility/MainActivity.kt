@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val findViewById = findViewById<PointerSpeedometer>(R.id.speed)
+        val findViewById = findViewById<AwesomeSpeedometer>(R.id.speed)
         findViewById.speedTo(50F)
         /*val image = findViewById<ImageView>(R.id.main_background)
         val imageShadow = findViewById<ImageView>(R.id.main_background2)
