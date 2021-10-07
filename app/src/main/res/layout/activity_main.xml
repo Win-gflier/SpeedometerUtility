@@ -8,10 +8,65 @@
     tools:context=".MainActivity">
 
 
+
+    <ImageView
+        android:id="@+id/main_background"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/start_speed_test"
+        android:onClick="connectingView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/main_background2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:onClick="connectingView"
+        android:layout_centerInParent="true"
+        android:background="@drawable/start_speed_test"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Начать"
+        android:textColor="@color/white"
+        android:id="@+id/txtConnect"
+        android:textSize="40sp"
+        android:onClick="connectingView"
+        app:layout_constraintBottom_toBottomOf="@+id/main_background"
+        app:layout_constraintEnd_toEndOf="@+id/main_background"
+        app:layout_constraintStart_toStartOf="@+id/main_background"
+        app:layout_constraintTop_toTopOf="@+id/main_background" />
+
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        app:layout_constraintBottom_toBottomOf="@+id/main_background"
+        app:layout_constraintEnd_toEndOf="@+id/main_background"
+        app:layout_constraintStart_toStartOf="@+id/main_background"
+        app:layout_constraintTop_toTopOf="@+id/main_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:background="@drawable/circle_shape"
+        style="?android:attr/progressBarStyleHorizontal" />
+
     <com.wingfly.speedtestutility.AwesomeSpeedometer
         android:id="@+id/speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
