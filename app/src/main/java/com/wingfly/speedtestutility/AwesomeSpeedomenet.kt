@@ -435,4 +435,8 @@ open class AwesomeSpeedometer @JvmOverloads constructor(
         if (isAttachedToWindow)
             invalidate()
     }
+
+    fun setIndictorColor() {
+        indicator.color=speedometerColor
+    }
 }

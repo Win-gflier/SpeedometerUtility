@@ -8,11 +8,10 @@
     tools:context=".MainActivity">
 
 
-
     <ImageView
         android:id="@+id/main_background"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_centerInParent="true"
         android:background="@drawable/start_speed_test"
         android:onClick="connectingView"
@@ -21,72 +20,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:visibility="gone"
-        android:id="@+id/main_background2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:onClick="connectingView"
-        android:layout_centerInParent="true"
-        android:background="@drawable/start_speed_test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Начать"
-        android:textColor="@color/white"
-        android:id="@+id/txtConnect"
-        android:textSize="40sp"
-        android:onClick="connectingView"
-        app:layout_constraintBottom_toBottomOf="@+id/main_background"
-        app:layout_constraintEnd_toEndOf="@+id/main_background"
-        app:layout_constraintStart_toStartOf="@+id/main_background"
-        app:layout_constraintTop_toTopOf="@+id/main_background" />
-
-
-
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        app:layout_constraintBottom_toBottomOf="@+id/main_background"
-        app:layout_constraintEnd_toEndOf="@+id/main_background"
-        app:layout_constraintStart_toStartOf="@+id/main_background"
-        app:layout_constraintTop_toTopOf="@+id/main_background"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:progressDrawable="@drawable/circular_progress_bar"
-        android:background="@drawable/circle_shape"
-        style="?android:attr/progressBarStyleHorizontal" />
-
-    <com.wingfly.speedtestutility.AwesomeSpeedometer
-        android:id="@+id/speed"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:sv_backgroundCircleColor="#1D2039"
-        app:sv_centerCircleColor="#2d3153"
-        app:sv_indicatorColor="#ed4366"
-        android:visibility="gone"
-        app:sv_indicatorWidth="5dp"
-        app:sv_markColor="#313553"
-        app:sv_markHeight="1dp"
-        app:sv_markStyle="ROUND"
-        app:sv_markWidth="0.5dp"
-        app:sv_marksNumber="80"
-        app:sv_marksPadding="55dp"
-        app:sv_maxSpeed="150"
-        app:sv_pointerColor="#ed4366"
-        app:sv_speedTextPosition="CENTER"
-        app:sv_speedometerColor="#ed4366"
-        app:sv_tickNumber="7"
-        app:sv_tickPadding="-16dp"
-        app:sv_tickRotation="true" />
+        app:layout_constraintBottom_toBottomOf="@+id/main_background"
+        app:layout_constraintEnd_toEndOf="@+id/main_background"
+        app:layout_constraintStart_toStartOf="@+id/main_background"
+        app:layout_constraintTop_toTopOf="@+id/main_background">
+
+
+
+        <com.wingfly.speedtestutility.AwesomeSpeedometer
+            android:id="@+id/speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:sv_backgroundCircleColor="#1D2039"
+            app:sv_centerCircleColor="#2d3153"
+            app:sv_indicatorColor="#313553"
+            app:sv_indicatorWidth="5dp"
+            app:sv_markColor="#313553"
+            app:sv_markHeight="1dp"
+            app:sv_markStyle="ROUND"
+            app:sv_markWidth="0.5dp"
+            app:sv_marksNumber="80"
+            app:sv_marksPadding="55dp"
+            app:sv_maxSpeed="150"
+            app:sv_pointerColor="#ed4366"
+            app:sv_speedTextPosition="CENTER"
+            app:sv_speedometerColor="#ed4366"
+            app:sv_tickNumber="7"
+            app:sv_tickPadding="-16dp"
+            app:sv_tickRotation="true" />
+
+        <ImageView
+            android:id="@+id/main_background2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@drawable/start_speed_test"
+            android:onClick="connectingView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtConnect"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:onClick="connectingView"
+            android:text="Начать"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_shape"
+            android:progressDrawable="@drawable/circular_progress_bar" />
+    </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

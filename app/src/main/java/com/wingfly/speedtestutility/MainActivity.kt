@@ -3,6 +3,7 @@ package com.wingfly.speedtestutility
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -35,71 +36,71 @@ class MainActivity : AppCompatActivity() {
         progressBar = findViewById<ProgressBar>(R.id.progressBar)
         imageShadow = findViewById<ImageView>(R.id.main_background2)
 
-        progressBar?.visibility =View.VISIBLE
+//        progressBar?.visibility =View.VISIBLE
 
 
 
-        val shadowAnim = ObjectAnimator.ofPropertyValuesHolder(
-            imageShadow,
-            PropertyValuesHolder.ofFloat("scaleY", 1.25f),
-            PropertyValuesHolder.ofFloat("scaleX", 1.25f),
-            PropertyValuesHolder.ofFloat("alpha", 0f),
-        )
-
-         shadowAnimatorSet = AnimatorSet()
-         scaleDownAnimatorSet = AnimatorSet()
-         scaleUpAnimatorSet = AnimatorSet()
-
-        val scaleDown =
-            ObjectAnimator.ofPropertyValuesHolder(
-                image,
-                PropertyValuesHolder.ofFloat("scaleY", .98f),
-                PropertyValuesHolder.ofFloat("scaleX", .98f)
-            )
-
-        val scaleUp =
-            ObjectAnimator.ofPropertyValuesHolder(
-                image,
-                PropertyValuesHolder.ofFloat("scaleY", 1f),
-                PropertyValuesHolder.ofFloat("scaleX", 1f)
-            )
-
-
-        scaleDownAnimatorSet?.apply {
-            play(scaleDown)
-            duration = 100
-            start()
-            doOnEnd {
-                scaleUpAnimatorSet.apply {
-                    play(scaleUp)
-                    duration = 200
-                    start()
-                    doOnEnd {
-                        imageShadow?.visibility = View.VISIBLE
-                        shadowAnimatorSet.apply {
-                            play(shadowAnim)
-                            duration = 1500
-                            start()
-                            doOnEnd {
-                                scaleDownAnimatorSet!!.startDelay = 1300
-                                scaleDownAnimatorSet!!.start()
-                            }
-                        }
-                    }
-                }
-            }
-        }
+//        val shadowAnim = ObjectAnimator.ofPropertyValuesHolder(
+//            imageShadow,
+//            PropertyValuesHolder.ofFloat("scaleY", 1.25f),
+//            PropertyValuesHolder.ofFloat("scaleX", 1.25f),
+//            PropertyValuesHolder.ofFloat("alpha", 0f),
+//        )
+//
+//         shadowAnimatorSet = AnimatorSet()
+//         scaleDownAnimatorSet = AnimatorSet()
+//         scaleUpAnimatorSet = AnimatorSet()
+//
+//        val scaleDown =
+//            ObjectAnimator.ofPropertyValuesHolder(
+//                image,
+//                PropertyValuesHolder.ofFloat("scaleY", .98f),
+//                PropertyValuesHolder.ofFloat("scaleX", .98f)
+//            )
+//
+//        val scaleUp =
+//            ObjectAnimator.ofPropertyValuesHolder(
+//                image,
+//                PropertyValuesHolder.ofFloat("scaleY", 1f),
+//                PropertyValuesHolder.ofFloat("scaleX", 1f)
+//            )
+//
+//
+//        scaleDownAnimatorSet?.apply {
+//            play(scaleDown)
+//            duration = 100
+//            start()
+//            doOnEnd {
+//                scaleUpAnimatorSet.apply {
+//                    play(scaleUp)
+//                    duration = 200
+//                    start()
+//                    doOnEnd {
+//                        imageShadow?.visibility = View.VISIBLE
+//                        shadowAnimatorSet.apply {
+//                            play(shadowAnim)
+//                            duration = 1500
+//                            start()
+//                            doOnEnd {
+//                                scaleDownAnimatorSet!!.startDelay = 1300
+//                                scaleDownAnimatorSet!!.start()
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
 
 
     }
 
     fun connectingView(view: android.view.View) {
 
-        shadowAnimatorSet?.end()
-        scaleUpAnimatorSet?.end()
-        scaleDownAnimatorSet?.end()
+//        shadowAnimatorSet?.end()
+//        scaleUpAnimatorSet?.end()
+//        scaleDownAnimatorSet?.end()
         image?.visibility = View.GONE
-        imageShadow?.visibility = View.GONE
+        imageShadow?.setBackgroundResource(R.drawable.start_speed_grey);
 
         progressBar?.visibility=View.VISIBLE
         txtConnect?.text= "Подключение"
@@ -121,8 +122,10 @@ class MainActivity : AppCompatActivity() {
         // Code to show the loader here
         Handler(Looper.getMainLooper()).postDelayed({
             txtConnect?.visibility = View.GONE
+            imageShadow?.visibility=View.GONE
+            image?.visibility=View.GONE
             progressBar?.visibility=View.GONE
-            awesomeSpeedometer?.visibility = View.VISIBLE
+            awesomeSpeedometer?.setIndictorColor()
             awesomeSpeedometer?.speedTo(50F)
         }, 3000)
     }
